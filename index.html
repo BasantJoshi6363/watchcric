@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Iframe</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
 
-<body class="w-screen h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-6">
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Stream Panel</h2>
+            <button onclick="changeStream('https://yonotv-now.pages.dev/plyrr?src=https://live-en.aisports.cc/moviebox/device01/playlist.m3u8')">Link 1</button>
+            <button onclick="changeStream('https://yonotv-now.pages.dev/plyrr?src=https://tvsen5.aynaott.com/c9EpzZ6fQBJ3/index.m3u8')">Link 2</button>
+            <button onclick="changeStream('https://yonotv-now.pages.dev/plyrr?src=https://tvsen5.aynaott.com/cXPB2LKkErN9/index.m3u8')">Link 3</button>
+            <button onclick="changeStream('https://bhalocast.com/86056ec0-5e5d-4fca-88c4-30103ecedd78')">Link 4</button>
+        </nav>
 
-  <div class="max-w-2xl w-full text-center space-y-6">
-    <h1 class="text-3xl md:text-4xl font-bold text-yellow-400">Welcome To Cricket Watching Site</h1>
-
-    <div class="flex flex-col sm:flex-row sm:justify-center gap-4">
-      <a href="/watchcric/tnt.html" target="_blank"
-        class="px-6 py-3 bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">TNT</a>
-      <a target="_blank" href="/watchcric/willow.html"
-        class="px-6 py-3 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition duration-300">Willow Cricket</a>
-      <a target="_blank" href="/watchcric/starh.html"
-        class="px-6 py-3 bg-red-600 rounded-lg shadow-lg hover:bg-red-700 transition duration-300">Star HD</a>
+        <main class="player-section">
+            <div class="video-wrapper">
+                <iframe 
+                    id="main-player"
+                    src="https://yonotv-now.pages.dev/plyrr?src=https://live-en.aisports.cc/moviebox/device01/playlist.m3u8" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="controls">
+                <button onclick="toggleFullscreen()">Enter Fullscreen</button>
+            </div>
+        </main>
     </div>
-  </div>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
